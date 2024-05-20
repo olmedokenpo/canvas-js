@@ -1,2 +1,2 @@
-#canvas-js
-canvas-javascript
+# canvas-js
+Curso de canvas en javascript
