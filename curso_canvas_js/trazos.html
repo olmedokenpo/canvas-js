@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso-canvas-js</title>
+
+    <style>
+        canvas {
+            background-color: cyan;
+            border: solid yellow 3px;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+
+            canvas = document.getElementById('canvas');
+
+            if (canvas && canvas.getContext) {
+                ctx = canvas.getContext("2d");
+
+
+                if (ctx) {
+
+                    ctx.lineWidth = 20;
+                    ctx.strokeStyle="yellow";
+                    ctx.fillStyle="red";//para ser aplicado al método fill en la línea 54. 
+                                        //fill agrega o rellena con color rojo al cierre del cuadsrado.
+
+                    //trazos o path
+                    ctx.beginPath();
+                    ctx.moveTo(50,100);
+                    ctx.lineTo(100,50);
+                    ctx.lineTo(150,100);
+                    ctx.lineTo(100,150);
+                    ctx.stroke();
+
+                    //trazos o path
+                    ctx.beginPath();
+                    ctx.moveTo(200,150);
+                    ctx.lineTo(250,50);
+                    ctx.lineTo(300,100);
+                    ctx.lineTo(250,150);
+                    ctx.closePath(); //con closePath cierro el trazo formando un poligono
+                    ctx.stroke();
+
+                    //trazos o path
+                    ctx.beginPath();
+                    ctx.moveTo(350,100);
+                    ctx.lineTo(400,50);
+                    ctx.lineTo(450,100);
+                    ctx.lineTo(400,150);
+                    ctx.fill();
+                    ctx.closePath(); //con closePath cierro el trazo formando un poligono
+                    ctx.stroke();
+
+                } else {
+                    alert("No se soporta la etiqueta canvas");
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+
+    <canvas id="canvas" width="600" height="400">
+
+    </canvas>
+
+</body>
+
+</html>
