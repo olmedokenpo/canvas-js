@@ -8,7 +8,7 @@ const dibujar = (cursorX,cursorY)=>{
     context.beginPath();
     context.moveTo(initialX,initialY);
     context.lineWidth = 3;
-    context.strokeStyle = "#000";
+    context.strokeStyle = "#080";
     context.lineCap ="round";
     context.lineJoin="round";
     context.lineTo(cursorX,cursorY);
