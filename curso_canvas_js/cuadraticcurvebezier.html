@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso-canvas-js</title>
+
+    <style>
+        canvas {
+            background-color: cyan;
+            border: solid yellow 3px;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+
+            canvas = document.getElementById('canvas');
+
+            if (canvas && canvas.getContext) {
+                ctx = canvas.getContext("2d");
+
+
+                if (ctx) {
+
+                    ctx.lineWidth = 10
+                    ctx.strokeStyle = "yellow"
+                    ctx.beginPath()
+
+                    var x1 = 20
+                    var y1 = 20
+                    ctx.moveTo(x1, y1)
+                    //método que dibuja curva cuadratica--> https://www.w3schools.com/Tags/canvas_quadraticcurveto.asp
+                    ctx.quadraticCurveTo(20,200,400,20)
+                    ctx.stroke()
+
+
+                } else {
+                    alert("No se soporta la etiqueta canvas");
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+
+    <canvas id="canvas" width="600" height="400">
+
+    </canvas>
+
+</body>
+
+</html>
